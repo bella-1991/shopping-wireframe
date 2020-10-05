@@ -11,3 +11,27 @@ body {
 body {
   overflow-x: hidden;
 }
+
+.btn:hover,
+.btn:focus,
+.btn:active:not(:disabled):not(.disabled) {
+  box-shadow: none;
+  background: transparent;
+  border-color: transparent;
+  outline: none;
+}
+
+.btn-dark:focus,
+.btn-primary:focus {
+  box-shadow: none;
+}
+
+.btn.btn-dark:active:not(:disabled):not(.disabled),
+.btn.btn-primary:active:not(:disabled):not(.disabled) {
+  color: inherit;
+}
+
+.btn.btn-dark:active:not(:disabled):not(.disabled):focus,
+.btn.btn-primary:active:not(:disabled):not(.disabled):focus {
+  box-shadow: none;
+}

@@ -1,4 +1,5 @@
 .header__nav {
+    position: relative;
     justify-content: flex-end;
 }
 
@@ -45,13 +46,80 @@
     margin: 0;
 }
 
-.header__btn.btn-dark:hover {
+.header__btn.btn-dark:hover,
+.header__btn.btn-dark:focus {
     background-color: var(--secondary-colour);
     border-color: var(--secondary-colour);
+    outline: none;
+    box-shadow: none;
+}
+
+.header__icons--desktop {
+    display: flex;
+    align-items: center;
 }
 
 .header__icons--mobile {
     display: none;
+}
+
+.header .form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    position: absolute;
+    background: var(--sub-colour);
+    padding-left: 50px;
+    left: 100%;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease-in-out 0.5s;
+}
+
+.header .form-inline.show-search {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+.header .form-control {
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid;
+    border-radius: 0;
+}
+
+.header .form-inline .header__btn {    
+    cursor: default;
+    pointer-events: none;
+    background-color: var(--secondary-colour);
+    border-color: var(--secondary-colour);
+}
+
+.header__close-search.btn.btn-primary {
+    color: var(--primary-colour);
+    background: transparent;
+    border: none;
+    margin: 0 10px;
+    padding: 0;
+}
+
+.header__close-search.btn.btn-primary:hover,
+.header__close-search.btn.btn-primary:focus {
+    color: var(--secondary-colour);
+}
+
+.header__search-btn.btn-outline-dark {
+    color: var(--primary-colour);
+    border-color: var(--primary-colour);
+}
+
+.header__search-btn.btn-outline-dark:hover,
+.header__search-btn.btn-outline-dark:focus {
+    background: var(--primary-colour);
+    color: var(--sub-colour);
 }
 
 /* responsive
