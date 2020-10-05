@@ -1,0 +1,47 @@
+.portfolio {
+    padding: 50px 0;
+}
+
+.portfolio__container.container {
+    position: relative;
+    padding: 40px 0;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+    columns: 3;
+    -webkit-column-gap: 36px;
+    -moz-column-gap: 36px;
+    column-gap: 36px;
+}
+
+.portfolio__filter {
+    text-align: center;
+    padding: 25px 0;
+}
+
+.portfolio__filter .btn {
+    border-radius: 0;
+    border-color: var(--primary-colour);
+    color: var(--primary-colour);
+}
+
+.portfolio__filter .btn:hover {    
+    background-color: var(--primary-light);
+}
+
+.portfolio__filter .btn.active:not(:disabled):not(.disabled) {
+    background-color: var(--primary-light);
+    border-color: var(--primary-colour);
+}
+
+.portfolio__product:hover .product__description {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 767px) { 
+    .portfolio__container.container {
+        -webkit-columns: 1;
+        -moz-columns: 1;
+        columns: 1;
+        padding: 40px 20px;
+    }
+}

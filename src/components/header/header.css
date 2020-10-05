@@ -1,0 +1,94 @@
+.header__nav {
+    justify-content: flex-end;
+}
+
+.header__navbar.navbar-light .navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.header__navbar.navbar-light .navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--primary-colour);
+    font-weight: bold;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.header__navbar.navbar-light .navbar-nav .nav-link.active,
+.header__navbar.navbar-light .navbar-nav .nav-link:hover,
+.header__navbar.navbar-light .navbar-nav .nav-link:focus {
+    color: var(--secondary-colour);
+}
+
+.header__navbar.navbar-light .navbar-nav .nav-link .fa-arrow-right {
+    display: none;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+.header__btn.btn-dark {
+    background-color: var(--primary-colour);
+    border-color: var(--primary-colour);
+    border-radius: 50%;
+    padding: 1px 4px;
+    font-size: 12px;
+    margin: 0 15px 0 0;
+}
+
+
+.header__btn.btn-dark:last-of-type {
+    margin: 0;
+}
+
+.header__btn.btn-dark:hover {
+    background-color: var(--secondary-colour);
+    border-color: var(--secondary-colour);
+}
+
+.header__icons--mobile {
+    display: none;
+}
+
+/* responsive
+============================ */
+@media screen and (max-width: 768px) { 
+    .header__nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        height: calc(100vh - 80px);
+        z-index: 1;
+        border-top: 1px solid var(--primary-colour);
+        background: var(--sub-colour);
+    }
+
+    .header__nav .navbar-nav {
+        display: block;
+    }
+
+    .header__navbar.navbar-light .navbar-nav .nav-link {
+        border-bottom: 1px solid var(--primary-colour);
+    }
+
+    .header__navbar.navbar-light .navbar-nav .nav-link.active {
+        color: var(--primary-colour);
+    }
+
+    .header__navbar.navbar-light .navbar-nav .nav-link .fa-arrow-right {
+        display: block;
+    }
+
+    .header__icons--desktop {
+        display: none;
+    }   
+    
+    .header__icons--mobile {
+        display: block;
+    }
+}

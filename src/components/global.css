@@ -1,0 +1,118 @@
+.component-header {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-colour);
+    color: var(--sub-colour);
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+.component-header h2 {
+    min-width: 200px;
+    border-bottom: 3px solid var(--sub-colour);
+    text-transform: uppercase;
+    padding: 0 10px 5px;
+}
+
+.component-header--transparent {
+    text-align: center;
+    color: var(--primary-colour);
+}
+
+.component-header--transparent h2 {
+    font-weight: bold;
+}
+
+.product {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.product__link {
+    display: block;
+}
+
+.product__link:hover,
+.product__link:focus,
+.product__link * {
+    text-decoration: none;
+}
+
+.product__title,
+.product__description,
+.product__price {    
+    color: var(--primary-colour);
+}
+
+.product__title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product__link:hover .product__title {
+    text-decoration: underline;
+}
+
+.product__image-container {
+    padding-bottom: 20px;
+}
+
+.product .product__image {
+    position: relative;
+    background-color: var(--secondary-colour);
+}
+
+.product__image:before {
+    content: '';
+    display: block;
+    padding-bottom: 120%;
+}
+
+.product svg.svg-inline--fa {
+    color: var(--sub-colour);
+    width: 80px;
+    height: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.product:nth-of-type(3n - 1)  .product__image {
+    background-color: var(--primary-colour);
+}
+
+.product:nth-of-type(3n) .product__image {
+    background-color: var(--primary-light);
+}
+
+.product__price-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product__price {
+    margin: 0;
+}
+
+.product__price + .product__price {
+    margin-left: 40px;
+}
+
+.product__price--new {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.product__price--old {
+    color: var(--secondary);
+    text-decoration: line-through;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .product__image:before {
+        padding-bottom: 110%;
+    }
+}
