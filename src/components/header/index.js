@@ -11,7 +11,7 @@ function Header() {
             <Container>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Brand href="/">
-                <img src="../assets/logo.png" />
+                <img src="../assets/logo.png" alt="logo" />
               </Navbar.Brand>
               <div className="header__icons header__icons--mobile">
                 <Button variant="dark" className="header__btn"><FontAwesomeIcon icon={faShoppingCart} /></Button>

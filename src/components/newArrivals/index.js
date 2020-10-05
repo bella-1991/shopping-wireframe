@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 import './new-arrivals.css';
