@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Navbar, Nav, Container, Button, Form, FormControl } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faShoppingCart, faArrowRight, faTimes } from '@fortawesome/free-solid-svg-icons';
-import './header.css';
+import './header.scss';
 
 function Header() {  
   const [searchOpen, setSearchOpen] = useState(false),

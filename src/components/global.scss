@@ -1,0 +1,119 @@
+.component-header {
+    display: flex;
+    justify-content: center;
+    background-color: var(--secondary-colour);
+    color: var(--sub-colour);
+    padding: 40px 0 20px;
+    text-align: center;
+
+    h2 {
+        min-width: 200px;
+        border-bottom: 3px solid var(--sub-colour);
+        text-transform: uppercase;
+        padding: 0 10px 5px;
+    }
+
+    &--transparent {
+        text-align: center;
+        color: var(--primary-colour);
+
+        h2 {
+            font-weight: bold;
+        }
+    }
+}
+
+.product {
+    position: relative;
+    margin-bottom: 40px;
+
+    &__link {
+        display: block;
+
+        &:hover,
+        &:focus,
+        * {
+            text-decoration: none;
+        }
+
+        &:hover,
+        &:focus {
+            .product__title {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__title,
+    &__description,
+    &__price {    
+        color: var(--primary-colour);
+    }
+
+    &__title {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    &__image-container {
+        padding-bottom: 20px;
+    }
+
+    &__image {
+        position: relative;
+        background-color: var(--secondary-colour);
+
+        &:before {
+            content: '';
+            display: block;
+            padding-bottom: 120%;
+
+            @media screen and (max-width: 767px) {
+                padding-bottom: 110%;
+            }
+        }
+    }
+
+    svg.svg-inline--fa {
+        color: var(--sub-colour);
+        width: 80px;
+        height: 70px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__price-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__price {
+        margin: 0;
+
+        + .product__price {
+            margin-left: 40px;
+        }
+
+        &--new {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        &--old {
+            color: var(--secondary);
+            text-decoration: line-through;
+            font-size: 12px;
+        }
+    }
+
+    &:nth-of-type(3n - 1) .product__image {
+        background-color: var(--primary-colour);
+    }
+
+    &:nth-of-type(3n) .product__image {
+        background-color: var(--primary-light);
+    }
+}

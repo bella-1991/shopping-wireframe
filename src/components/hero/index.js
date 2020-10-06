@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Col } from 'react-bootstrap';
-import './hero.css';
+import './hero.scss';
 
 function Hero() {
   return (

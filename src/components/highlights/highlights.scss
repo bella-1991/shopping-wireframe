@@ -1,0 +1,85 @@
+.highlights {
+    &__container.container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 80px 0;
+
+        @media screen and (max-width: 767px) { 
+            flex-direction: column;
+        }
+    }
+
+    &__col {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--secondary-colour);
+        color: var(--sub-colour);
+        flex: 0 1 30%;
+        margin-right: auto;
+
+        @media screen and (max-width: 767px) { 
+            width: 75%;
+            margin: 0 auto 55px;
+        }
+
+        &:nth-of-type(2) {
+            background-color: var(--primary-colour);
+        }
+
+        &:last-of-type {
+            margin: 0;
+            background-color: var(--primary-light);
+
+            @media screen and (max-width: 767px) { 
+                width: 75%;
+                margin: 0 auto 55px;
+            }
+        }
+
+        &:after {
+            display: block;
+            content: '';
+            padding-bottom: 100%;
+        }
+
+        h2 {
+            padding: 0 60px 0 40px;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        top: 120%;
+        left: -24%;
+        transform: translate(15%, -120%);
+
+        @media screen and (max-width: 1024px) {
+            width: 100px;
+            height: 100px;
+            left: -24px;
+            transform: translate(-15px, -120%);
+        }
+
+        @media screen and (max-width: 768px) {
+            left: -40px;
+            transform: translate(0, -100%);
+        }
+
+        @media screen and (max-width: 767px) {
+            transform: translate(0, -120%);
+        }
+
+        @media screen and (max-width: 812px) and (orientation:landscape) {
+            left: -40px;
+            transform: translate(0, -100%);
+        }
+    }
+}
+
+

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap';
-import './highlights.css';
+import './highlights.scss';
 
 function Highlights() {
   return (

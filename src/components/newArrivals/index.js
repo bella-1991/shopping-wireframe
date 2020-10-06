@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
-import './new-arrivals.css';
+import './new-arrivals.scss';
 
 function NewArrivals() {
   const [newArrivals, setNewArrivals] = useState([]);

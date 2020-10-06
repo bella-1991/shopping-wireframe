@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Container } from 'react-bootstrap';
-import './footer.css';
+import './footer.scss';
 
 function Footer() {
   const [navigation, setNavigation] = useState([

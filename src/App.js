@@ -10,9 +10,9 @@ import Features from './components/features';
 import Latest from './components/latest';
 import Footer from './components/footer';
 
-import './App.css';
+import './App.scss';
 import './components/variables.css';
-import './components/global.css';
+import './components/global.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {

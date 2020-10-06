@@ -1,0 +1,78 @@
+.hero {
+    display: flex;
+    min-height: 455px;
+    background-color: var(--secondary-colour);
+    overflow: hidden;
+
+    @media screen and (max-width: 1024px) {
+        min-height: 400px;
+    }
+
+    @media screen and (max-width: 768px) {
+        min-height: 310px;
+
+        &__description {
+            display: none;
+        }
+    }
+
+    &__container {
+        display: flex;
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--sub-colour);
+
+        @media screen and (max-width: 767px) {
+            &--shape {
+                display: none;
+            }
+        }
+    }
+
+    &__chevron {
+        position: relative;
+        text-align: center;
+        padding: 12px;
+        transform: rotate(90deg);
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 1px;
+            height: 500%;
+            width: 50%;
+            background: var(--sub-colour);
+            transform: skew(0deg, 45deg);
+        }
+
+        &:after {
+            left: auto;
+            right: 0;
+            transform: skew(0deg, -45deg);
+        }
+    }
+
+    &__diamond {
+        &:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 200px;
+            height: 200px;
+            background: var(--sub-colour);
+            transform: translate(0, -50%) rotate(45deg);
+
+            @media screen and (max-width: 768px) {
+                height: 100px;
+                width: 100px;
+            }
+        }
+    }
+}

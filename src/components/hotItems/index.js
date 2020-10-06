@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Container, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle, faImage } from '@fortawesome/free-solid-svg-icons';
-import './hot-items.css';
+import './hot-items.scss';
 
 function HotItems() {
   const [hotItems, setHotItems] = useState({})

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Container, Button, Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
-import './portfolio.css';
+import './portfolio.scss';
 
 function Portfolio() {
   const [portfolioItems, setPortfolioItems] = useState([]),
@@ -36,7 +36,6 @@ function Portfolio() {
     }
     
     setFilteredItems(newSet);
-
   }
 
   return (

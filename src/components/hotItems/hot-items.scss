@@ -1,0 +1,95 @@
+.hot-items {
+    &__container.container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 40px 0;
+    }
+
+    &__media {
+        position: relative;
+        padding-bottom: 20px;
+        background: var(--secondary-colour);
+
+        svg.svg-inline--fa {
+            color: var(--sub-colour);
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            padding-bottom: 60%;
+        }
+    }
+
+    &__col {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &--secondary {
+            .hot-items__media-item {
+                flex: 0 1 47%;
+            }
+
+            .hot-items__media {
+                background: var(--primary-light);
+            }
+        }
+
+        &--tertiary {
+            .hot-items__media-item {
+                flex: 0 1 23%;
+
+                @media screen and (max-width: 767px) {
+                    flex: 0 1 47%;
+                }
+            }
+
+            .hot-items__media {
+                background: var(--primary-colour);
+            }
+        }
+
+        &--secondary,
+        &--tertiary {
+            .hot-items__media:before {
+                padding-bottom: 51%;
+            }
+
+            svg.svg-inline--fa {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            &--primary {
+                .hot-items__media:before {
+                    padding-bottom: 75%;
+                }
+            }
+        }
+    }
+
+    &__media-item {
+        position: relative;
+        flex: 1;
+    }    
+
+    &__description {
+        margin: 10px 0;
+        color: var(--primary-colour);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .hot-items__col--tertiary .hot-items__media-item {
+        // flex: 0 1 47%;
+    }
+}
