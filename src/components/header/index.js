@@ -15,7 +15,6 @@ function Header() {
         ])
 
   const toggleSearch = () => {
-    console.log('open search')
     setSearchOpen(!searchOpen);
   }
 
