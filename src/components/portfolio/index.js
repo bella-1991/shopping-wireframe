@@ -1,18 +1,43 @@
-import React, { useState } from 'react'
-import { Container, Button } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react'
+import { Container, Button, Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 import './portfolio.css';
 
 function Portfolio() {
-  const [portfolioItems, setPortfolioItems] = useState([    
-    { id:0, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', newPrice: 451, oldPrice: 1021 },
-    { id:1, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', newPrice: 452, oldPrice: 1022 },
-    { id:2, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', newPrice: 453, oldPrice: 1023 },
-    { id:3, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', newPrice: 454, oldPrice: 1024 },
-    { id:4, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', newPrice: 455, oldPrice: 1025 },
-    { id:5, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', newPrice: 456, oldPrice: 1026 }
-  ])
+  const [portfolioItems, setPortfolioItems] = useState([]),
+        [tags, setTags] = useState([
+          { id:0, tag: 'All' },
+          { id:1, tag: 'Feature' },
+          { id:2, tag: 'Latest' },
+          { id:3, tag: 'Primary' }
+        ]),
+        [selectedTag, setSelectedTag] = useState(tags[0].id),
+        [filteredItems, setFilteredItems] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/portfolio.json')
+      .then(resp => resp.json())
+      .then(portfolioItems => {
+        setPortfolioItems(portfolioItems);
+        setFilteredItems(portfolioItems);
+      })
+  }, []);
+
+  const selectTag = id => {
+    setSelectedTag(id);
+
+    let newSet;
+
+    if (id !== 0) {
+       newSet = portfolioItems.filter(item => item.tags.includes(id));
+    } else {
+      newSet = portfolioItems;
+    }
+    
+    setFilteredItems(newSet);
+
+  }
 
   return (
     <div className="portfolio">
@@ -21,17 +46,24 @@ function Portfolio() {
             <p>Replace your text here!  Replace your text here!</p>
         </header>
         <div className="portfolio__filter">
-          <p>
-            
-          </p>
-          <ul className="portfolio__filter-list"></ul>
-          <Button variant="outline-secondary" active>Secondary</Button>
-          <Button variant="outline-secondary">Secondary</Button>
-          <Button variant="outline-secondary">Secondary</Button>
-          <Button variant="outline-secondary">Secondary</Button>
+          <select className="portfolio__dropdown" value={selectedTag} onChange={e => selectTag(parseInt(e.target.value))}>
+            { tags.map(item => (
+              <option key={item.id} value={item.id}>{item.tag}</option>
+            )) }
+          </select>
+          
+          <ul className="portfolio__filter-list">
+            { tags.map(item => (              
+              <Button variant="outline-secondary" 
+                      key={item.id} 
+                      className={item.id === selectedTag ? 'active' : ''}
+                      onClick={() => selectTag(item.id)}>{item.tag}</Button>
+            )) }
+          </ul>
         </div>
+
         <Container className="portfolio__container">
-          { portfolioItems.map(item => 
+          { filteredItems.map(item =>
               <div className="portfolio__product product" key={item.id}>
                 <a className="product__link" href={"/product/id?" + item.id}>
                   <div className="product__image-container">

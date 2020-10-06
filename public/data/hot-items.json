@@ -1,0 +1,17 @@
+{
+    "primary": [      
+      { "id":0, "text": "Replace your text here 1!", "mediaType": "video" }
+    ],
+    "secondary": [      
+      { "id":1, "text": "Replace your text here 2!", "mediaType": "image" },
+      { "id":2, "text": "Replace your text here 3!", "mediaType": "image" },
+      { "id":3, "text": "Replace your text here 4!", "mediaType": "image" },
+      { "id":4, "text": "Replace your text here 5!", "mediaType": "image" }
+    ],
+    "tertiary": [      
+      { "id":5, "text": "Replace your text here 6!", "mediaType": "image" },
+      { "id":6, "text": "Replace your text here 7!", "mediaType": "image" },
+      { "id":7, "text": "Replace your text here 8!", "mediaType": "image" },
+      { "id":8, "text": "Replace your text here 9!", "mediaType": "image" }
+    ]
+}

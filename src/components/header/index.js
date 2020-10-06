@@ -29,7 +29,7 @@ function Header() {
               </Navbar.Brand>
               <div className="header__icons header__icons--mobile">
                 <Button variant="dark" className="header__btn"><FontAwesomeIcon icon={faShoppingCart} /></Button>
-                <Button variant="dark" className="header__btn"><FontAwesomeIcon icon={faSearch} /></Button>
+                <Button variant="dark" className="header__btn" onClick={() => toggleSearch()}><FontAwesomeIcon icon={faSearch} /></Button>
               </div>
               <Navbar.Collapse id="responsive-navbar-nav" className="header__nav">                
                 <Nav defaultActiveKey="/home" as="ul">
@@ -46,15 +46,19 @@ function Header() {
                 <div className="header__icons header__icons--desktop">
                   <Button variant="dark" className="header__btn"><FontAwesomeIcon icon={faShoppingCart} /></Button>
                   <Button variant="dark" className="header__btn" onClick={() => toggleSearch()}><FontAwesomeIcon icon={faSearch} /></Button>
-                </div>
+                </div>          
+              </Navbar.Collapse>              
                 
-                <Form inline className={searchOpen ? "show-search" : ""}>
-                  <Button variant="dark" className="header__btn"><FontAwesomeIcon icon={faSearch} /></Button>
-                  <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                  <Button variant="outline-dark" className="header__search-btn">Search</Button>
-                  <Button className="header__close-search" onClick={() => toggleSearch()}><FontAwesomeIcon icon={faTimes} /></Button>
-                </Form>                
-              </Navbar.Collapse>
+              <Form inline className={searchOpen ? "show-search" : ""}>
+                <Container>
+                  <div className="header__search-container">
+                    <Button variant="dark" className="header__btn"><FontAwesomeIcon icon={faSearch} /></Button>
+                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <Button variant="outline-dark" className="header__search-btn">Search</Button>
+                    <Button className="header__close-search" onClick={() => toggleSearch()}><FontAwesomeIcon icon={faTimes} /></Button>
+                  </div>
+                </Container>
+              </Form>      
             </Container>            
           </Navbar>
         </div>

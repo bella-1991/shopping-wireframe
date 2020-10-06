@@ -3,6 +3,12 @@
     color: var(--sub-colour);
 }
 
+.footer a,
+.footer a:hover,
+.footer a:focus {
+    color: var(--sub-colour);
+}
+
 .footer__container.container {
     padding: 40px 0 50px;
     display: flex;

@@ -29,6 +29,7 @@ body {
 .btn.btn-dark:active:not(:disabled):not(.disabled),
 .btn.btn-primary:active:not(:disabled):not(.disabled) {
   color: inherit;
+  background: transparent;
 }
 
 .btn.btn-dark:active:not(:disabled):not(.disabled):focus,
